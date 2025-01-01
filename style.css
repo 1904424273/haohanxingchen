@@ -1,170 +1,87 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: "Arial", sans-serif;
-    background-image: url('background.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    font-family: "Arial", sans-serif; /* 默认字体 */
+    background-color: #000;
+    overflow: hidden;
     color: white;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    overflow: hidden;
     position: relative;
 }
 
-.container {
+.content {
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 30px; /* 修改 padding 值*/
-    border-radius: 15px;
-     width: 100%; /* 容器宽度充满屏幕*/
-     box-sizing: border-box; /* 包括 padding 和 border */
-     z-index: 1;
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
-
 
 h1 {
-    font-size: 4em;
-    margin-bottom: 20px;
-    color: #ffd700;
-    text-shadow: 2px 2px 4px #000000;
+    font-size: 5em;
+    color: #fff;
+    text-shadow: 2px 2px 4px #000;
+    margin-bottom: 10px;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
 }
 
-.greeting {
-    font-size: 1.8em;
-    margin-bottom: 30px;
+h2 {
+    font-size: 2em;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
 }
 
-.video-container {
-    margin-bottom: 30px;
+#message {
+    font-family: 'Caveat', cursive;
+    font-size: 1.7em;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+    margin-top: -180px;
+    white-space: pre-wrap;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    padding: 0 20px;
+    width: 80%;
+    letter-spacing: 3px;
+    line-height: 2.3;
+    display: flex; /* 使用 Flexbox 布局 */
+    align-items: center; /* 垂直居中 */
+    justify-content: space-between; /* 两端对齐 */
 }
 
-video {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+.heart {
+    color: red; /* 红心颜色 */
+    font-size: 2em; /* 红心大小 */
+    margin-right: 10px; /* 红心与文字的间距 */
 }
 
-.music-container {
-    margin-top: 20px;
+#custom-image {
+    max-width: 100px; /* 图片最大宽度 */
+    max-height: 100px; /* 图片最大高度 */
+    margin-left: 10px; /* 图片与文字的间距 */
 }
 
-#musicBtn {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 18px;
-    cursor: pointer;
-    border-radius: 7px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+.hidden {
+    opacity: 0;
 }
 
-/* 雪花动画 */
-.snowflakes {
+/* 星空 Canvas */
+#starCanvas {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none;
     z-index: 0;
-}
-
-.snowflake {
-  position: absolute;
-  color: white;
-  font-size: 1em;
-  user-select: none;
-  animation: snowfall 10s linear infinite;
-}
-
-@keyframes snowfall {
-  0% {
-    opacity: 0;
-    transform: translate(0, -100px);
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-      opacity: 1;
-  }
-  100% {
-      opacity: 0;
-    transform: translate(0, 100vh);
-  }
-}
-.snowflake:nth-child(1){
-    left: 10%;
-    animation-delay: 0s;
-}
-
-.snowflake:nth-child(2){
-    left: 20%;
-    animation-delay: 1s;
-}
-.snowflake:nth-child(3){
-    left: 30%;
-    animation-delay: 2s;
-}
-.snowflake:nth-child(4){
-    left: 40%;
-    animation-delay: 3s;
-}
-.snowflake:nth-child(5){
-    left: 50%;
-    animation-delay: 4s;
-}
-.snowflake:nth-child(6){
-    left: 60%;
-     animation-delay: 5s;
-}
-.snowflake:nth-child(7){
-    left: 70%;
-    animation-delay: 6s;
-}
-.snowflake:nth-child(8){
-    left: 80%;
-    animation-delay: 7s;
-}
-.snowflake:nth-child(9){
-    left: 90%;
-    animation-delay: 8s;
-}
-.snowflake:nth-child(10){
-    left: 10%;
-    animation-delay: 9s;
-}
-.snowflake:nth-child(11){
-    left: 50%;
-    animation-delay: 10s;
-}
-.snowflake:nth-child(12){
-    left: 90%;
-    animation-delay: 11s;
-}
-
-/* 针对小屏幕设备 (手机) */
-@media (max-width: 768px) {
-    .container {
-        padding: 20px;
-    }
-    h1 {
-        font-size: 2.5em;
-    }
-     .greeting {
-        font-size: 1.2em;
-    }
-     #musicBtn {
-        padding: 8px 16px;
-        font-size: 14px;
-    }
 }

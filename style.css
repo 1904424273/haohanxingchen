@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: "Arial", sans-serif; /* 默认字体 */
+    font-family: "Arial", sans-serif;
     background-color: #000;
     overflow: hidden;
     color: white;
@@ -47,7 +47,7 @@ h2 {
     font-size: 1.7em;
     color: #fff;
     text-shadow: 1px 1px 2px #000;
-    margin-top: -180px;
+    margin-top: -200px;
     white-space: pre-wrap;
     opacity: 0;
     transition: opacity 1s ease-in-out;
@@ -55,21 +55,21 @@ h2 {
     width: 80%;
     letter-spacing: 3px;
     line-height: 2.3;
-    display: flex; /* 使用 Flexbox 布局 */
-    align-items: center; /* 垂直居中 */
-    justify-content: space-between; /* 两端对齐 */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .heart {
-    color: red; /* 红心颜色 */
-    font-size: 2em; /* 红心大小 */
-    margin-right: 10px; /* 红心与文字的间距 */
+    color: red;
+    font-size: 2em;
+    margin-right: 10px;
 }
 
 #custom-image {
-    max-width: 100px; /* 图片最大宽度 */
-    max-height: 100px; /* 图片最大高度 */
-    margin-left: 10px; /* 图片与文字的间距 */
+    max-width: 100px;
+    max-height: 100px;
+    margin-left: 10px;
 }
 
 .hidden {
@@ -84,4 +84,25 @@ h2 {
     width: 100%;
     height: 100%;
     z-index: 0;
+}
+#musicBtn {
+    background-color: rgba(0,0,0,0.8); /* 设置背景为黑色 */
+    color: white; /* 设置文字为白色 */
+    border: none;
+    padding: 6px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+    outline: none;
+}
+.music-container {
+  position: relative;
+  z-index: 2;
 }

@@ -3,7 +3,10 @@ const ctx = canvas.getContext('2d');
 const greeting1 = document.getElementById('greeting1');
 const greeting2 = document.getElementById('greeting2');
 const message = document.getElementById('message');
-const textContent = document.getElementById('text-content'); // 获取 span 元素
+const textContent = document.getElementById('text-content');
+const bgMusic = document.getElementById('bgMusic');
+const musicBtn = document.getElementById('musicBtn');
+let isPlaying = false;
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
@@ -58,6 +61,17 @@ setTimeout(() => {
 
     setTimeout(() => {
         message.style.opacity = 1;
-        textContent.textContent = "星星乖乖\n2024虽然过去\n但是2025已经到达\n希望我们在2025\n你的本命蛇年里\n更加向上，健康平安\n所念皆可得\n愿我们的未来万丈光芒\n爱你！";
+       textContent.textContent = "星星乖乖\n2024虽然过去\n但是2025已经到达\n希望我们在2025\n你的本命蛇年里\n更加向上，健康平安\n所念皆可得\n愿我们的未来万丈光芒\n爱你！";
     }, 1000);
 }, 3000);
+
+musicBtn.addEventListener('click', () => {
+        if (isPlaying) {
+            bgMusic.pause();
+            musicBtn.textContent = "播放音乐";
+        } else {
+            bgMusic.play();
+            musicBtn.textContent = "暂停音乐";
+        }
+        isPlaying = !isPlaying;
+    });
